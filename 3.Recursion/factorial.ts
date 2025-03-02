@@ -1,9 +1,9 @@
-"use strict";
 // factorial function by Recursion
-function factorial(num) {
-    if (num === 1)
-        return 1;
-    return num * factorial(num - 1);
+
+function factorial (num: number): number
+{
+  if (num === 1) return 1;
+  return num * factorial(num - 1);
 }
 // factorial(5);
 //       5 * factorial(4)

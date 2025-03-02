@@ -6,10 +6,10 @@
 // isPalindrome('amanaplanacanalpanama') // true
 // isPalindrome('amanaplanacanalpandemonium') // false
 
-function isPalindrome(str) {
+function isPalindrome(str: string): boolean {
   // add whatever parameters you deem necessary - good luck!
   let newStr = "";
-  function helper(hInput) {
+  function helper(hInput: string): void {
     if (hInput.length === 0) {
       return;
     }

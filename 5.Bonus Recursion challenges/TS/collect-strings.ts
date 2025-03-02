@@ -1,19 +1,20 @@
 // Write a function called collectStrings which accepts an object and returns an array of all the values in the object that have a typeof string
 
-function collectStrings(obj) {
-  var arr = [];
-  for (var key in obj) {
+function collectStrings(obj: Record<string, any>): string[] {
+  let arr: string[] = [];
+  
+  for (let key in obj) {
     if (typeof obj[key] === "string") {
       arr.push(obj[key]);
-    } else if (typeof obj[key] === "object") {
+    } else if (typeof obj[key] === "object" && obj[key] !== null) {
       arr = arr.concat(collectStrings(obj[key]));
     }
   }
-
+  
   return arr;
 }
 
-const obj = {
+const newObj = {
   stuff: "foo",
   data: {
     val: {
@@ -29,4 +30,5 @@ const obj = {
   },
 };
 
-collectStrings(obj); // ["foo", "bar", "baz"])
+console.log(collectStrings(newObj)); // ["foo", "bar", "baz"]
+

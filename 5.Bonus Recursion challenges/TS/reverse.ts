@@ -3,11 +3,13 @@
 // reverse('awesome') // 'emosewa'
 // reverse('rithmschool') // 'loohcsmhtir'
 
-function reverse(str) {
-  // add whatever parameters you deem necessary - good luck!
-  let newStr = "";
-  function helper(hInput) {
-    if (hInput.length === 0) {
+function reverse(str: string): string
+{
+  let newStr: string = "";
+  function helper(hInput:string)
+  {
+    if (hInput.length === 0)
+    {
       return;
     }
     newStr += hInput[hInput.length - 1];
@@ -17,4 +19,4 @@ function reverse(str) {
   return newStr;
 }
 
-reverse("ANTON");
+console.log(reverse("ANTON"));
